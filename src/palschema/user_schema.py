@@ -7,6 +7,3 @@ class AuthSchema:
     expired_ts: int
 
 
-@dataclass
-class InfoSchema:
-    pearl_id: str

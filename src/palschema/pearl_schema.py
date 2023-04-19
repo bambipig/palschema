@@ -4,6 +4,11 @@ from typing import List
 
 
 @dataclass
+class InfoSchema:
+    pearl_id: str
+
+
+@dataclass
 class ThingPieceSchema:
     bytes_size: int
     sha256_hash: str
