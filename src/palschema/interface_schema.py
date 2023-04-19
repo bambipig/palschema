@@ -4,6 +4,7 @@ from dataclasses import dataclass
 @dataclass
 class LoginRequestSchema:
     email: str
+    password: str
 
 
 
