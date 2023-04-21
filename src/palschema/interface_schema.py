@@ -22,6 +22,7 @@ class LoginResponseSchema:
 @dataclass
 class SearchThingRequestSchema:
     type_name: str
+    source_protocol: str
     source_host: str
     source_uri: str
     uri: str
@@ -36,6 +37,7 @@ class SearchThingResponseSchema:
 @dataclass
 class RequestThingRequestSchema:
     type_name: str
+    source_protocol: str
     source_host: str
     source_uri: str
 
@@ -48,6 +50,7 @@ class RequestThingResponseSchema:
 @dataclass
 class DownloadThingRequestSchema:
     type_name: str
+    source_protocol: str
     source_host: str
     source_uri: str
     uri: str
