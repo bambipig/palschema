@@ -27,3 +27,5 @@ class ThingSchema:
 
     pieces: List[ThingPieceSchema] = field(default_factory=list)
 
+
+ThingWithPiecesSchema = ThingSchema

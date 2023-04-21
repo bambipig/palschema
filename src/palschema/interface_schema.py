@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from palschema.pearl_schema import ThingSchema
+from palschema.pearl_schema import ThingSchema, ThingWithPiecesSchema
 
 
 @dataclass
@@ -46,9 +46,12 @@ class RequestThingResponseSchema:
 
 @dataclass
 class DownloadThingRequestSchema:
-    pass
+    type_name: str
+    source_host: str
+    source_uri: str
+    uri: str
 
 
 @dataclass
 class DownloadThingResponseSchema:
-    pass
+    item: ThingWithPiecesSchema
