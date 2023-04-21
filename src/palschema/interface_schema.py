@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from palschema.pearl_schema import ThingSchema, ThingWithPiecesSchema
+from typing import Union
 
 
 @dataclass
@@ -41,7 +42,7 @@ class RequestThingRequestSchema:
 
 @dataclass
 class RequestThingResponseSchema:
-    item: ThingSchema = None
+    item: Union[ThingSchema, None] = None
 
 
 @dataclass
@@ -54,4 +55,4 @@ class DownloadThingRequestSchema:
 
 @dataclass
 class DownloadThingResponseSchema:
-    item: ThingWithPiecesSchema
+    item: Union[ThingWithPiecesSchema, None] = None
