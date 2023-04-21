@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from palschema.pearl_schema import ThingSchema
 
 
 @dataclass
@@ -19,12 +20,16 @@ class LoginResponseSchema:
 
 @dataclass
 class SearchThingRequestSchema:
-    pass
+    type_name: str
+    source_host: str
+    source_uri: str
+    uri: str
 
 
 @dataclass
 class SearchThingResponseSchema:
-    pass
+    items: list[ThingSchema]
+    count: int
 
 
 @dataclass
