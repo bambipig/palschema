@@ -34,12 +34,14 @@ class SearchThingResponseSchema:
 
 @dataclass
 class RequestThingRequestSchema:
-    pass
+    type_name: str
+    source_host: str
+    source_uri: str
 
 
 @dataclass
 class RequestThingResponseSchema:
-    pass
+    item: ThingSchema = None
 
 
 @dataclass
