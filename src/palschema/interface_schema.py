@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from palschema.pearl_schema import ThingSchema, ThingWithPiecesSchema
 from typing import Union
+from pydantic.dataclasses import dataclass
 
 
 @dataclass

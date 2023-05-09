@@ -9,6 +9,12 @@ class InfoSchema:
 
 
 @dataclass
+class PearlSchema:
+    host: str
+    port: int
+
+
+@dataclass
 class ThingPieceSchema:
     bytes_size: int
     sha256_hash: str
