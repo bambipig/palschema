@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from dataclasses import  field
 from typing import List
-
+from pydantic import BaseModel as BaseSchema
 
 @dataclass
 class InfoSchema:
@@ -25,13 +25,19 @@ class ThingPieceSchema:
 
 @dataclass
 class ThingSchema:
-    ttype_uuid: str
-    source_uuid: str
-    source_uri: str
     thing_uuid: str
-    uri: str
+    # ttype_uuid: str
+    # source_uuid: str
+    # source_uri: str
+    # uri: str
+    #
+    # pieces: List[ThingPieceSchema] = field(default_factory=list)
 
-    pieces: List[ThingPieceSchema] = field(default_factory=list)
+
+class TaskSchema(BaseSchema):
+    """Task Schema"""
+    task_uuid: str
+
 
 
 ThingWithPiecesSchema = ThingSchema

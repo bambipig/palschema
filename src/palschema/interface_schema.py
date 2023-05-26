@@ -1,13 +1,11 @@
 from dataclasses import dataclass
 from palschema.pearl_schema import ThingSchema, ThingWithPiecesSchema
 from typing import Union
-from pydantic.dataclasses import dataclass
 
 
 @dataclass
 class LoginRequestSchema:
     email: str
-    password: str
 
 
 
@@ -18,21 +16,26 @@ class LoginResponseSchema:
     master_key_encrypted: str
     private_key_encrypted: str
     access_token_encrypted: str
+    fernet_key_encrypted: str
+
+
+@dataclass
+class ListResponseSchema:
+    items: list
+    count: int
 
 
 @dataclass
 class SearchThingRequestSchema:
-    type_name: str
-    source_protocol: str
-    source_host: str
-    source_uri: str
-    uri: str
+    keywords: list[str]
+
+    type_name: str = None
+    source_host: str = None
 
 
 @dataclass
-class SearchThingResponseSchema:
+class SearchThingResponseSchema(ListResponseSchema):
     items: list[ThingSchema]
-    count: int
 
 
 @dataclass
@@ -45,18 +48,20 @@ class RequestThingRequestSchema:
 
 @dataclass
 class RequestThingResponseSchema:
-    item: Union[ThingSchema, None] = None
+    thing_uuid: str
+    task_uuid: str
 
 
 @dataclass
 class DownloadThingRequestSchema:
-    type_name: str
-    source_protocol: str
-    source_host: str
-    source_uri: str
-    uri: str
+    thing_uuid: str
 
 
 @dataclass
 class DownloadThingResponseSchema:
-    item: Union[ThingWithPiecesSchema, None] = None
+    thing_uuid: str
+    type_name: str
+    source_host: str
+    source_uri: str
+    uri: str
+    resources: dict
