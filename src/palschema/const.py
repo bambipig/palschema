@@ -1,7 +1,0 @@
-DOCKER_DEFAULT_DOMAIN = 'docker.io'
-DOCKER_DEFAULT_PROTOCOL = 'https'
-DOCKER_DEFAULT_REPO = 'library'
-DOCKER_TYPE_NAME = 'docker_image'
-
-GIT_TYPE_NAME = 'git_repo'
-GIT_DEFAULT_PROTOCOL = 'https'

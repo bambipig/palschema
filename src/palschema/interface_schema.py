@@ -1,12 +1,9 @@
 from dataclasses import dataclass
-from palschema.pearl_schema import ThingSchema, ThingWithPiecesSchema
-from typing import Union
 
 
 @dataclass
 class LoginRequestSchema:
     email: str
-
 
 
 @dataclass
@@ -35,7 +32,7 @@ class SearchThingRequestSchema:
 
 @dataclass
 class SearchThingResponseSchema(ListResponseSchema):
-    items: list[ThingSchema]
+    items: list
 
 
 @dataclass
