@@ -11,6 +11,7 @@ class LoginResponseSchema:
     uid: str
     email: str
     master_key_encrypted: str
+    public_key: str
     private_key_encrypted: str
     access_token_encrypted: str
     fernet_key_encrypted: str
