@@ -24,6 +24,18 @@ class ListResponseSchema:
 
 
 @dataclass
+class ThingSchema:
+    type_name: str
+    source_uri: str
+    thing_uuid: str
+    uri: str
+    status: str
+    meta_id: str = None
+    uuid: str = None
+    source_host: str = None
+
+
+@dataclass
 class SearchThingRequestSchema:
     keywords: list[str]
 
@@ -33,7 +45,10 @@ class SearchThingRequestSchema:
 
 @dataclass
 class SearchThingResponseSchema(ListResponseSchema):
-    items: list
+    items: list[ThingSchema]
+
+    def __post_init__(self):
+        self.items = [ThingSchema(**_e) for _e in self.items]
 
 
 @dataclass
