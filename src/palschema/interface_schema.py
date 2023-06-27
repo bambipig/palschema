@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Dict
 
 
 @dataclass
@@ -71,10 +72,17 @@ class DownloadThingRequestSchema:
 
 
 @dataclass
+class ResourceSchema:
+    size: int
+    sha256_hash: str
+    url: str
+
+
+@dataclass
 class DownloadThingResponseSchema:
     thing_uuid: str
     type_name: str
     source_host: str
     source_uri: str
     uri: str
-    resources: dict
+    resources: Dict[str, ResourceSchema]
