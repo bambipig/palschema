@@ -85,4 +85,4 @@ class DownloadThingResponseSchema:
     source_host: str
     source_uri: str
     uri: str
-    resources: Dict[str, ResourceSchema]
+    resources: Dict
