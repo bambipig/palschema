@@ -73,6 +73,7 @@ class DownloadThingRequestSchema:
 
 @dataclass
 class ResourceSchema:
+    uuid: str
     size: int
     sha256_hash: str
     url: str
