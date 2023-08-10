@@ -13,7 +13,6 @@ if __name__ == "__main__":
         setup(
             name='palschema',
             packages=['palschema'],
-            install_requires=['pydantic==1.10.7'],
             use_scm_version={"version_scheme": "no-guess-dev"})
     except:  # noqa
         print(
