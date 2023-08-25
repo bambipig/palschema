@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from typing import Dict
+from typing import List
 
 
 @dataclass
@@ -84,6 +85,8 @@ class ResourceSchema:
     size: int
     sha256_hash: str
     url: str
+    pieces_num: int
+    pieces_urls: List[str]
 
 
 @dataclass
