@@ -84,6 +84,7 @@ class ResourceSchema:
     uuid: str
     size: int
     sha256_hash: str
+    sha256_hash_storage: str
     url: str
     pieces_num: int
     pieces_urls: List[str]
