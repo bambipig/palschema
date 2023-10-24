@@ -98,3 +98,14 @@ class DownloadThingResponseSchema:
     source_uri: str
     uri: str
     resources: Dict
+
+
+@dataclass
+class UserSyncDeviceHeartbeatRequestSchema:
+    public_key: str
+    socket_addresses: dict
+
+
+@dataclass
+class UserSyncDeviceHeartbeatResponseSchema:
+    pass
