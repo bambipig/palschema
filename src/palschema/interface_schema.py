@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import Dict
-from typing import List
+from typing import List, Tuple
 
 
 @dataclass
@@ -103,7 +103,7 @@ class DownloadThingResponseSchema:
 @dataclass
 class UserSyncDeviceHeartbeatRequestSchema:
     public_key: str
-    socket_addresses: dict
+    addrs: List[Tuple[str, str]]
 
 
 @dataclass
