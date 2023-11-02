@@ -104,8 +104,21 @@ class DownloadThingResponseSchema:
 class UserSyncDeviceHeartbeatRequestSchema:
     public_key: str
     addrs: List[Tuple[str, str]]
+    derp_region: int
 
 
 @dataclass
 class UserSyncDeviceHeartbeatResponseSchema:
     pass
+
+
+@dataclass
+class UserQueryDeviceRequestSchema:
+    public_key: str
+
+
+@dataclass
+class UserQueryDeviceResponseSchema:
+    public_key: str
+    addrs: List[Tuple[str, str]]
+    derp_region: int
