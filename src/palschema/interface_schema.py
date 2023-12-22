@@ -38,6 +38,27 @@ class ThingSchema:
 
 
 @dataclass
+class ThingMetaSchema:
+    type_name: str
+    meta_id: str
+    meta_info: Dict
+
+
+@dataclass
+class ThingWithMetaSchema:
+    type_name: str
+    source_uri: str
+    thing_uuid: str
+    uri: str
+    status: str
+    meta_id: str
+    uuid: str
+    source_host: str
+    thing_meta_uuid: str
+    thing_meta_info: dict
+
+
+@dataclass
 class SearchThingRequestSchema:
     keywords: list[str]
 
@@ -60,6 +81,10 @@ class RequestThingSourceMetaSchema:
     source_uri: str
 
 
+"""
+Request Thing
+"""
+
 @dataclass
 class RequestThingRequestSchema:
     type_name: str
@@ -72,6 +97,11 @@ class RequestThingRequestSchema:
 class RequestThingResponseSchema:
     thing_uuid: str
     task_uuid: str
+
+
+"""
+Download Thing
+"""
 
 
 @dataclass
@@ -93,11 +123,13 @@ class ResourceSchema:
 @dataclass
 class DownloadThingResponseSchema:
     thing_uuid: str
+    thing_status: str
     type_name: str
     source_host: str
     source_uri: str
     uri: str
     resources: Dict
+    status: str
 
 
 @dataclass
@@ -111,6 +143,9 @@ class UserSyncDeviceHeartbeatRequestSchema:
 class UserSyncDeviceHeartbeatResponseSchema:
     pass
 
+"""
+User Query Device
+"""
 
 @dataclass
 class UserQueryDeviceRequestSchema:
@@ -122,3 +157,17 @@ class UserQueryDeviceResponseSchema:
     public_key: str
     addrs: List[Tuple[str, str]]
     derp_region: int
+
+
+"""Sync Thing To Sbc"""
+
+Z
+@dataclass
+class SyncThingToSbcRequestSchema:
+    thing: ThingSchema
+    thing_meta: ThingMetaSchema
+
+
+@dataclass
+class SyncThingToSbcResponseSchema:
+    pass
