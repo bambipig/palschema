@@ -32,6 +32,7 @@ class ThingSchema:
     thing_uuid: str
     uri: str
     status: str
+    thing_meta_uuid: str
     meta_id: str = None
     uuid: str = None
     source_host: str = None
@@ -46,6 +47,8 @@ class ThingMetaSchema:
 
 @dataclass
 class ThingWithMetaSchema:
+    type_name_uri_sha256_hash: str
+    type_name_source_host_source_uri_sha256_hash: str
     type_name: str
     source_uri: str
     thing_uuid: str
