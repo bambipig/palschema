@@ -164,7 +164,7 @@ class UserQueryDeviceResponseSchema:
 
 """Sync Thing To Sbc"""
 
-Z
+
 @dataclass
 class SyncThingToSbcRequestSchema:
     thing: ThingSchema
