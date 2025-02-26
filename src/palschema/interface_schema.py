@@ -16,6 +16,7 @@ class LoginResponseSchema:
     public_key: str
     private_key_encrypted: str
     access_token_encrypted: str
+    server_public_key: str
     fernet_key_encrypted: str
 
 
